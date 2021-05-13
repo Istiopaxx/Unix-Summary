@@ -22,31 +22,378 @@
             </div>
 
 
-
             <div class="ui segment">
-                <h2 class="ui header"></h2>
-                <p></p>
+                <h2 class="ui header">contents</h2>
                 <ul>
                     <li>
-
+                        $ Cal
+                    </li>
+                    <li>
+                        $ Ls
+                    </li>
+                    <li>
+                        $ I/O Redirection, Pipe
+                    </li>
+                    <li>
+                        $ Echo, wc
+                    </li>
+                    <li>
+                        $ Cp, mv, rm
+                    </li>
+                    <li>
+                        $ directory
+                    </li>
+                    <li>
+                        $ Mail, grep
+                    </li>
+                    <li>
+                        $ Viewing text files
                     </li>
                 </ul>
-
             </div>
 
 
             <div class="ui segment">
-                <h4 class="ui header"></h4>
-                <p></p>
+                <h2 class="ui header">cal</h2>
                 <ul>
                     <li>
-                        
+                        $ cal
+                    </li>
+                    <li>
+                        – cal 2015
+                    </li>
+                    <li>
+                        – cal 5 2015
+                    </li>
+                    <li>
+                        $ whoami
+                    </li>
+                    <li>
+                        – /usr/ucb/whoami
+                    </li>
+                    <li>
+                        $ who am I
+                    </li>
+                    <li>
+                        $ users
+                    </li>
+                    <li>
+                        $ who
                     </li>
                 </ul>
-
             </div>
 
 
+
+
+            <div class="ui segment">
+                <h2 class="ui header">ls</h2>
+                <ul>
+                    <li>
+                        $ ls
+                    </li>
+                    <li>
+                        $ ls –sCF
+                    </li>
+                    <li>
+                        $ ls –s –C –F /usr/bin
+                    </li>
+                    <li>
+                        $ ls –a
+                    </li>
+                    <li>
+                        $ ls .
+                    </li>
+                    <li>
+                        $ Ls –al .
+                    </li>
+                    <li>
+                        $ ls –ld /
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">I/O redirection</h2>
+                <ul>
+                    <li>
+                        $ Process has input, output, error output
+                    </li>
+                    <li>
+                        – Process : running program
+                    </li>
+                    <li>
+                        $ I/O redirection changes input/output
+                    </li>
+                    <li>
+                        $ Standard input : keyboard (0)
+                    </li>
+                    <li>
+                        $ Standard output : screen (1)
+                    </li>
+                    <li>
+                        $ Standard error output : screen (2)
+                    </li>
+                    <li>
+                        > or 1> : change output
+                    </li>
+                    <li>
+                        2> : change error output
+                    </li>
+                    <li>
+                        < : change input
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">echo</h2>
+                <ul>
+                    <li>
+                        $ echo hi~
+                    </li>
+                    <li>
+                        $ echo hi > hi.txt
+                    </li>
+                    <li>
+                        $ echo hello >> hi.txt
+                    </li>
+                    <li>
+                        $ echo hello | write unix300
+                    </li>
+                    <li>
+                        $ echo hello | write unix300 pts/7
+                    </li>
+                    <li>
+                        $ echo $PATH
+                    </li>
+                    <li>
+                        $ banner Hi~
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">wc</h2>
+                <ul>
+                    <li>
+                        $ cat hi.txt
+                    </li>
+                    <li>
+                        $ cat /etc/passwd | wc
+                    </li>
+                    <li>
+                        $ wc /etc/passwd
+                    </li>
+                    <li>
+                        $ ls –l | wc
+                    </li>
+                    <li>
+                        $ who | wc
+                    </li>
+                    <li>
+                        $ wc –l /etc/passwd
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">cp, mv rm</h2>
+                <ul>
+                    <li>
+                        $ echo hi > hi.txt
+                    </li>
+                    <li>
+                        $ cat hi.txt
+                    </li>
+                    <li>
+                        $ cp hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ ls -sCF
+                    </li>
+                    <li>
+                        $ cat hi.txt
+                    </li>
+                    <li>
+                        $ rm hi2.txt
+                    </li>
+                    <li>
+                        $ mv hi.txt hi3.txt
+                    </li>
+                    <li>
+                        $ ls
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">directory</h2>
+                <ul>
+                    <li>
+                        $ pwd
+                    </li>
+                    <li>
+                        $ cd ..
+                    </li>
+                    <li>
+                        $ cd /
+                    </li>
+                    <li>
+                        $ pwd
+                    </li>
+                    <li>
+                        $ cd
+                    </li>
+                    <li>
+                        $ mkdir dir1
+                    </li>
+                    <li>
+                        $ ls –ld dir1
+                    </li>
+                    <li>
+                        $ cd dir1
+                    </li>
+                    <li>
+                        $ cd ..
+                    </li>
+                    <li>
+                        $ rmdir dir1
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">mail</h2>
+                <ul>
+                    <li>
+                        $ mailx
+                    </li>
+                    <li>
+                        – Just Enter or Number with Enter
+                    </li>
+                    <li>
+                        – h : show headers
+                    </li>
+                    <li>
+                        – quit
+                    </li>
+                    <li>
+                        $ mailx unix300
+                    </li>
+                    <li>
+                        – Title :
+                    </li>
+                    <li>
+                        – Contents : more than one line
+                    </li>
+                    <li>
+                        – ^d or .(dot)
+                    </li>
+                    <li>
+                        $ mailx unix300 < hi.txt
+                    </li>
+                    <li>
+                        $ ls /var/mail
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">grep</h2>
+                <ul>
+                    <li>
+                        $ cat /etc/passwd | grep unix30
+                    </li>
+                    <li>
+                        $ grep unix30 /etc/passwd
+                    </li>
+                    <li>
+                        $ ls –l | grep hi
+                    </li>
+                    <li>
+                        $ who | grep unix300
+                    </li>
+                    <li>
+                        $ grep –v root /etc/group
+                    </li>
+                    <li>
+                        $ grep ^other /etc/group
+                    </li>
+                    <li>
+                        $ grep csh$ /etc/passwd
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Viewing text files</h2>
+                <ul>
+                    <li>
+                        $ cat /etc/passwd
+                    </li>
+                    <li>
+                        $ cat /etc/passwd | more
+                    </li>
+                    <li>
+                        $ more /etc/passwd
+                    </li>
+                    <li>
+                        $ less /etc/passwd
+                    </li>
+                    <li>
+                        $ pg /etc/passwd
+                    </li>
+                    <li>
+                        $ head /etc/group
+                    </li>
+                    <li>
+                        $ head -5 /etc/group
+                    </li>
+                    <li>
+                        $ tail /etc/group
+                    </li>
+                    <li>
+                        $ tail –f /var/apache/logs/access_log
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="ui segment">
+                <h2 class="ui header">Redirection</h2>
+                <ul>
+                    <li>
+                        $ echo hi > hi.txt
+                    </li>
+                    <li>
+                        $ echo hello >> hi.txt
+                    </li>
+                    <li>
+                        $ mailx unix300 < hi.txt
+                    </li>
+                    <li>
+                        $ mkdir dir1
+                    </li>
+                    <li>
+                        $ mkdir dir1 2> err.txt
+                    </li>
+                    <li>
+                        $ tr ‘unix’ ‘UNIX’ < /etc/passwd > pass.txt
+                    </li>
+                    <li>
+                        $ find /export/home –name ‘hi.txt’ 1> out.txt 2> err.txt
+                    </li>
+                    <li>
+                        $ find /export/home –name ‘hi.txt’ 1> out.txt 2>&1
+                    </li>
+                    <li>
+                        $ find /export/home –name ‘hi.txt’ 2> err.txt 1>&2
+                    </li>
+                </ul>
+            </div>
+
+            
             
         </div>
     </body>
