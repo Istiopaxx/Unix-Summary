@@ -26,15 +26,210 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">awk</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        An output formatting language
+                    </li>
+                    <li>
+                        Perform operations primarily on existing text
+                    </li>
+                    <li>
+                        AWK is a pattern-matching program
+                    </li>
+                    <li>
+                        AWK takes 2 input
+                    </li>
+                    <li>
+                        – Command
+                    </li>
+                    <li>
+                        – Data
+                    </li>
+                    <li>
+                        – $ awk „{print $0}‟ /etc/passwd
+                    </li>
+                    <li>
+                        All output is sent to standard output
                     </li>
                 </ul>
 
             </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Extracting data</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        awk –F”:” „{print “username: “ $1 “\t\t\t user id: “ $3}‟ /etc/passwd
+                    </li>
+                    <li>
+                        -F switch : field separator
+                    </li>
+                    <li>
+                        – Default is a blank space
+                    </li>
+                    <li>
+                        Command
+                    </li>
+                    <li>
+                        – print “username: “ $1 “\t\t\t user id: “ $3
+                    </li>
+                    <li>
+                        – variable : $1(first field) $0(whole line)
+                    </li>
+                    <li>
+                        Data
+                    </li>
+                    <li>
+                        – /etc/passwd
+                    </li>
+                    <li>
+                        Executes for each lines
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Command 2 parts</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Patterns
+                    </li>
+                    <li>
+                        – Patterns are matched with the line from the data file
+                    </li>
+                    <li>
+                        – If no pattern is provided, AWK matched any line and command is always executed
+                    </li>
+                    <li>
+                        Commands
+                    </li>
+                    <li>
+                        – May has several constructions / Separator is ;
+                    </li>
+                    <li>
+                        – Each instructions include =, if , while, for, print, printf
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Patterns</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Consists of
+                    </li>
+                    <li>
+                        – String of text, or
+                    </li>
+                    <li>
+                        Example : /unix/
+                    </li>
+                    <li>
+                        – /Regular expression/
+                    </li>
+                    <li>
+                        Example : [a-z]
+                    </li>
+                    <li>
+                        Escape sequence at Printf
+                    </li>
+                    <li>
+                        – \n(new line), \‟(single quotation mark), \‟‟, \\(backslash), \0(null), \b(backspace)
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Standard Variables</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        FS : field separator
+                    </li>
+                    <li>
+                        NR : current line
+                    </li>
+                    <li>
+                        NF : number of words on a specific line
+                    </li>
+                    <li>
+                        FILENAME : name of input file
+                    </li>
+                    <li>
+                        RS : separator for each line in a file
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Programming with awk</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Awk –f print.awk /etc/passwd
+                    </li>
+                    <li>
+                        Awk file
+                    </li>
+                    <li>
+                        – BEGIN { FS=“:” ; total=0 }
+                    </li>
+                    <li>
+                        – { total+=1 ; print $1 $3 }
+                    </li>
+                    <li>
+                        – END { print total NR }
+                    </li>
+                    <li>
+                        3 sections is awk file
+                    </li>
+                    <li>
+                        – BEGIN : executed only once at the beginning
+                    </li>
+                    <li>
+                        – Main : executes once for each and every line
+                    </li>
+                    <li>
+                        – BEGIN and END can be omitted
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Example.awk</h2>
+                <p>BEGIN { num = 0; a[2] =0 ; a[3] = 0 }</p>
+                <p>{ sum=0</p>
+                <p>  for ( i=2 ; i<=NF ; i++ ) {</p>
+                <p>    sum += $i; a[i] += $i  </p>
+                <p>  }  </p>
+                <p>  printf("%s : sum %d avg is %.2f \n", $1, sum, sum/(NF-1))  </p>
+                <p>  num++  </p>
+                <p>}  </p>
+                <p>END {  </p>
+                <p>  for ( i=2 ; i<=4 ; i++ ) {  </p>
+                <p>    printf "%d th sum %d average %.2f \n", i, a[i], a[i]/NR  </p>
+                <p>  }  </p>
+                <p>}  </p>
+
+            </div>
+
 
 
             <div class="ui segment">
@@ -47,16 +242,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
-
-
 
 
         </div>

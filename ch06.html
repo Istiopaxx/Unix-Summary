@@ -24,16 +24,176 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Anatomy of a Command</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        $ Command [options] [arguments]
+                    </li>
+                    <li>
+                        – $ ls –sCF /usr/bin
+                    </li>
+                    <li>
+                        – $ ls –s –C –F /etc
+                    </li>
+                    <li>
+                        $ man ls
+                    </li>
+                    <li>
+                        $ apropos ls
+                    </li>
+                    <li>
+                        – Find related files
+                    </li>
+                    <li>
+                        $ whereis echo
+                    </li>
+                    <li>
+                        $ which echo
                     </li>
                 </ul>
 
             </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Meta Characters</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Wildcard
+                    </li>
+                    <li>
+                        – ? : matches any one character
+                    </li>
+                    <li>
+                        – *: matches character or characters
+                    </li>
+                    <li>
+                        – [] : matches one of the characters in […]
+                    </li>
+                    <li>
+                        $ ls *.txt
+                    </li>
+                    <li>
+                        $ ls hi?.txt
+                    </li>
+                    <li>
+                        $ ls hi[12357].txt
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Redirection</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ ls > ls.txt
+                    </li>
+                    <li>
+                        $ sort < /etc/group
+                    </li>
+                    <li>
+                        $ sort < /etc/group > sort.txt
+                    </li>
+                    <li>
+                        $ mkdir dir1
+                    </li>
+                    <li>
+                        $$ mkdir dir1 2> err.txt
+                    </li>
+                    <li>
+                        $ find / -name „hi.txt‟ 2> /dev/null
+                    </li>
+                    <li>
+                        $ find /export/home –name „hi.txt‟ > out.txt 2>&1
+                    </li>
+                    <li>
+                        $ find /export/home –name „hi.txt‟ 2> out.txt 1>&2
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Pipes</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Who | wc
+                    </li>
+                    <li>
+                        $ Cat /etc/passwd | grep unix30
+                    </li>
+                    <li>
+                        $ Echo $PATH
+                    </li>
+                    <li>
+                        $ Echo ${PATH}${TERM}
+                    </li>
+                    <li>
+                        $ Echo “$PATH”
+                    </li>
+                    <li>
+                        $ Echo „$PATH‟
+                    </li>
+                    <li>
+                        $ Echo “\HPATH”
+                    </li>
+                    <li>
+                        $ Echo today is `date
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Quotas</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ A limit on the amount of disk space each user is allocated
+                    </li>
+                    <li>
+                        $ /etc/vfstab enable quotas option
+                    </li>
+                    <li>
+                        – (usrquota,grpquota) should be set
+                    </li>
+                    <li>
+                        $ quotacheck –acug /export/home
+                    </li>
+                    <li>
+                        $ cd /export/home
+                    </li>
+                    <li>
+                        $ touch quotas
+                    </li>
+                    <li>
+                        $ chmod 600 quotas
+                    </li>
+                    <li>
+                        $ edquota user-id
+                    </li>
+                    <li>
+                        – soft, hard, i-nodes
+                    </li>
+                </ul>
+
+            </div>
+
+
 
 
             <div class="ui segment">
