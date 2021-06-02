@@ -25,16 +25,240 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Process</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        An instance of running program
+                    </li>
+                    <li>
+                        PID : process identifier (1 – 32768)
+                    </li>
+                    <li>
+                        PPID : parent PID
+                    </li>
+                    <li>
+                        pid 0 : schedule demon
+                    </li>
+                    <li>
+                        pid 1 : init process
+                    </li>
+                    <li>
+                        $ ps [–l] // see (my own) process
+                    </li>
+                    <li>
+                        $ ps –ef // see all process
+                    </li>
+                    <li>
+                        $ echo $$ // see current shell pid
                     </li>
                 </ul>
 
             </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Shell Scripts</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        # : comments
+                    </li>
+                    <li>
+                        #! : sh-bang
+                    </li>
+                    <li>
+                        – Tell the kernel to run the program listed after the #!
+                    </li>
+                    <li>
+                        my.sh
+                    </li>
+                    <li>
+                        – #!/bin/cat
+                    </li>
+                    <li>
+                        – Hello World
+                    </li>
+                    <li>
+                        – ^d
+                    </li>
+                    <li>
+                        chmod u+x my.sh
+                    </li>
+                    <li>
+                        ./my.sh
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Stopping process</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Ctrl + C (^C)
+                    </li>
+                    <li>
+                        – Stop current process
+                    </li>
+                    <li>
+                        kill commands
+                    </li>
+                    <li>
+                        – Send SIGNAL to process
+                    </li>
+                    <li>
+                        kill –l
+                    </li>
+                    <li>
+                        – List signal names
+                    </li>
+                    <li>
+                        kill -9 pid
+                    </li>
+                    <li>
+                        – Kill –KILL pid
+                    </li>
+                    <li>
+                        pkill program_name
+                    </li>
+                    <li>
+                        – $ pkill sleep
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/proc file system</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Contains a directory entry for active process named after PID
+                    </li>
+                    <li>
+                        $ ls –l /proc/$$
+                    </li>
+                    <li>
+                        $ ls –l /proc/1
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">SETUID</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        When a regular user runs a program that are set a SETUID bit, the effective UID is changed to the UID of the program owner
+                    </li>
+                    <li>
+                        /usr/bin/passwd
+                    </li>
+                    <li>
+                        /usr/bin/crontab
+                    </li>
+                    <li>
+                        $ find / -perm -4000
+                    </li>
+                    <li>
+                        $ chmod u+s myprog
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">SETGID</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        When a regular user runs a program that are set a SETUID bit, the effective GID is changed to the GID of the program owner
+                    </li>
+                    <li>
+                        /usr/bin/mail
+                    </li>
+                    <li>
+                        $ find / -perm -2000
+                    </li>
+                    <li>
+                        $ chmod g+s myprog
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Job Control</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Two type of process
+                    </li>
+                    <li>
+                        – Foreground : seize the terminal
+                    </li>
+                    <li>
+                        – Background : release the terminal
+                    </li>
+                    <li>
+                        & (ampersand)
+                    </li>
+                    <li>
+                        – Start as a background
+                    </li>
+                    <li>
+                        – $ sleep 60 &
+                    </li>
+                    <li>
+                        $ jobs
+                    </li>
+                    <li>
+                        $ ps
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Job commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Jobs // list jobs
+                    </li>
+                    <li>
+                        Fg [%n] // change to foreground
+                    </li>
+                    <li>
+                        Bg [%n] // change to background
+                    </li>
+                    <li>
+                        Kill %n // kill process
+                    </li>
+                    <li>
+                        Kill -18 %n // resume process
+                    </li>
+                    <li>
+                        Kill -19 %n // stop process
+                    </li>
+                    <li>
+                        Kill -9 pid // kill process
+                    </li>
+                </ul>
+
+            </div>
+
 
 
             <div class="ui segment">
@@ -47,14 +271,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
 
 
 

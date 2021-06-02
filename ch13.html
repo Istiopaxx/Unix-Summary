@@ -24,12 +24,146 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Script Language</h2>
                 <p></p>
                 <ul>
                     <li>
+                        Script is a program runs on the interpreter
+                    </li>
+                    <li>
+                        Unix Shell is an interpreter
+                    </li>
+                    <li>
+                        – DOS Shell is an interpreter, too.
+                    </li>
+                    <li>
+                        Shell reads the script and runs it directly line-by-line
+                    </li>
+                    <li>
+                        <-> Compile language like C/C++, must be compiled before running
+                    </li>
+                </ul>
 
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Usage</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Shell Program (scripts) is used for System administration
+                    </li>
+                    <li>
+                        Automate a vast of range of jobs with a few simple scripts
+                    </li>
+                    <li>
+                        – Boring and repetitive jobs
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Script file</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        #!/bin/sh
+                    </li>
+                    <li>
+                        – Executed by /bin/sh
+                    </li>
+                    <li>
+                        – Shebang : hash(#), bang(!)
+                    </li>
+                    <li>
+                        # : comments
+                    </li>
+                    <li>
+                        Variable=value
+                    </li>
+                    <li>
+                        – a=1
+                    </li>
+                    <li>
+                        – a=`expr $a+1` // back quote
+                    </li>
+                    <li>
+                        read var
+                    </li>
+                    <li>
+                        – Read from keyboard and save to variable var
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Special Variables</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        ? : previous command’s exit status
+                    </li>
+                    <li>
+                        $ : PID if the current shell
+                    </li>
+                    <li>
+                        - : Options at the start-up
+                    </li>
+                    <li>
+                        ! : PID of the last background process
+                    </li>
+                    <li>
+                        0 : script name
+                    </li>
+                    <li>
+                        1-9 : command-line arguments 1-9
+                    </li>
+                    <li>
+                        - : last argument
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Flow Control</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Test command
+                    </li>
+                    <li>
+                        – test expression
+                    </li>
+                    <li>
+                        – [ expression ]
+                    </li>
+                    <li>
+                        Operator : =, <, >, !=
+                    </li>
+                    <li>
+                        Conditional Flow Control
+                    </li>
+                    <li>
+                        – If-then-fi, if-then-else-fi, case-in-esac
+                    </li>
+                    <li>
+                        Iterative Flow Control
+                    </li>
+                    <li>
+                        – While-do-done, until-do-done
                     </li>
                 </ul>
 
@@ -46,18 +180,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>

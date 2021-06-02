@@ -25,16 +25,210 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">System clock</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        Date
+                    </li>
+                    <li>
+                        Date 201505050001.30
                     </li>
                 </ul>
 
             </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Scheduling commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        cron
+                    </li>
+                    <li>
+                        – periodic
+                    </li>
+                    <li>
+                        – crond (daemon), crontab(file)
+                    </li>
+                    <li>
+                        – crontab –e (edit), -l (list), -r (remove)
+                    </li>
+                    <li>
+                        at
+                    </li>
+                    <li>
+                        – one time
+                    </li>
+                    <li>
+                        – atd
+                    </li>
+                    <li>
+                        – at –t
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">crontab</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        EDITOR=vi
+                    </li>
+                    <li>
+                        export EDITOR
+                    </li>
+                    <li>
+                        crontab –e
+                    </li>
+                    <li>
+                        – Minute : 0-59
+                    </li>
+                    <li>
+                        – Hour : 0-23
+                    </li>
+                    <li>
+                        – Day of month : 1-31
+                    </li>
+                    <li>
+                        – Month : 1-12
+                    </li>
+                    <li>
+                        – Day of week : 0-7
+                    </li>
+                    <li>
+                        – Command
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Crontab expression</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Comma and no space
+                    </li>
+                    <li>
+                        – 0,2,5,7,9
+                    </li>
+                    <li>
+                        Through
+                    </li>
+                    <li>
+                        – 1-5
+                    </li>
+                    <li>
+                        Every
+                    </li>
+                    <li>
+                        – *
+                    </li>
+                    <li>
+                        Step
+                    </li>
+                    <li>
+                        – 10-16/2
+                    </li>
+                    <li>
+                        – 10,12,14,16
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Managing out from cron</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Commands | mail –s “…” username
+                    </li>
+                    <li>
+                        – -s : subject
+                    </li>
+                    <li>
+                        – Usermame
+                    </li>
+                    <li>
+                        Redirect to log file
+                    </li>
+                    <li>
+                        – Command >> log.file
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Controlling access to cron/st</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        /etc/cron.allow
+                    </li>
+                    <li>
+                        – username
+                    </li>
+                    <li>
+                        /etc/cron.deny
+                    </li>
+                    <li>
+                        – Username
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">at</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        One time execution
+                    </li>
+                    <li>
+                        atq
+                    </li>
+                    <li>
+                        atrm
+                    </li>
+                    <li>
+                        at 17:00
+                    </li>
+                    <li>
+                        at 5pm
+                    </li>
+                    <li>
+                        at noon
+                    </li>
+                    <li>
+                        at 4pm + 3 days
+                    </li>
+                    <li>
+                        at –f at.file
+                    </li>
+                </ul>
+
+            </div>
+
 
 
             <div class="ui segment">
@@ -47,13 +241,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
 
 
 

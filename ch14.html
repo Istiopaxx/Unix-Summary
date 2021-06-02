@@ -25,12 +25,297 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Input/output redirection</h2>
                 <p></p>
                 <ul>
                     <li>
+                        3 Standard files
+                    </li>
+                    <li>
+                        – STDIN (0) : keyboard
+                    </li>
+                    <li>
+                        – STDOUT (1) : monitor
+                    </li>
+                    <li>
+                        – STDERR (2) : monitor
+                    </li>
+                    <li>
+                        Redirection Operator
+                    </li>
+                    <li>
+                        – > : redirect STDOUT to a file
+                    </li>
+                    <li>
+                        – >> : appends STDOUT to a file
+                    </li>
+                    <li>
+                        – < : redirect STDIN to a file
+                    </li>
+                    <li>
+                        – | (pipe) : sends output of a process to input of other process
+                    </li>
+                    <li>
+                        – << delimiter : Associate input stream until delimiter
+                    </li>
+                </ul>
 
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Input/output redirection</h2>
+                <p>$ cat << AAA</p>
+                <p>The Cat  </p>
+                <p>Sat on the  </p>
+                <p>Mat .  </p>
+                <p>AAA // end string  </p>
+                <ul>
+                    <li>
+                        $ find / -name “*.txt” > out.txt 2> err.txt
+                    </li>
+                    <li>
+                        $ find / -name “*.txt” > out.txt 2>1&
+                    </li>
+                    <li>
+                        $ find / -name “*.txt” 2> out.txt 1>2&
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Command Substitution</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Substitutes results
+                    </li>
+                    <li>
+                        Back tick
+                    </li>
+                    <li>
+                        – Lines=`wc –l textFile`
+                    </li>
+                    <li>
+                        – a=`expr $a + 1`
+                    </li>
+                    <li>
+                        Brace expansion
+                    </li>
+                    <li>
+                        – Lines=“$(wc –l textFile)” // not work at sh
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Shell variable</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        a=5
+                    </li>
+                    <li>
+                        export a
+                    </li>
+                    <li>
+                        export b=7
+                    </li>
+                    <li>
+                        echo $a
+                    </li>
+                    <li>
+                        set
+                    </li>
+                    <li>
+                        env
+                    </li>
+                    <li>
+                        set | grep PATH
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Shell Functions</h2>
+                <p>Function Syntax : name() { commands; }</p>
+                <p>Repeat () {  </p>
+                <p>echo –n “I don’t know $1 $2  </p>
+                <p>return 7  </p>
+                <p>}  </p>
+                <p>Repeat Your Name  </p>
+                <p>echo $?  </p>
+                <p>exit 0  </p>
+                <ul>
+                    <li>
+                        I don’t know your Name
+                    </li>
+                    <li>
+                        7
+                    </li>
+                    <li>
+                        $ echo $?
+                    </li>
+                    <li>
+                        0
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Scope</h2>
+                <p>  </p>
+                <ul>
+                    <li>
+                        Two types of scope
+                    </li>
+                    <li>
+                        – Local / global
+                    </li>
+                    <li>
+                <p>scope () {  </p>
+                <p>local lov=1 // keyword local  </p>
+                <p>glov=2  </p>
+                <p>echo local $lov global $glov  </p>
+                <p>}  </p>
+                <p>scope  </p>
+                <p>echo local $lov global $glov  </p>
+                        
+                    </li>
+                    <li>
+                        local 1 global 2
+                    </li>
+                    <li>
+                        local global 2
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Function Libraries</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Include function script file using dot(.)
+                    </li>
+                    <li>
+                        . ./scope.sh // file name is scope.sh
+                    </li>
+                    <li>
+                        scope // function call
+                    </li>
+                    <li>
+                        echo function call test ends.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">getopts</h2>
+                <p>  </p>
+                <ul>
+                    <li>
+                        A built-in command line parser
+                    </li>
+                    <li>
+                <p>while getopts "abc:def" opt  </p>
+                <p>do  </p>
+                <p>case $opt in  </p>
+                <p>a) echo a specified;;  </p>
+                <p>b) echo b specified;;  </p>
+                <p>c) echo c specified  </p>
+                <p>echo $OPTARG;;  </p>
+                <p>d) echo d specified;;  </p>
+                <p>e) echo e specified;;  </p>
+                <p>f) echo f specified  </p>
+                <p>echo $OPTARG;;  </p>
+                <p>esac  </p>
+                <p>Done  </p>
+                        
+                    </li>
+                    <li>
+                        $ sh getopts.sh –a –b -c cc –d –e -f ff
+                    </li>
+                    <li>
+                        $ sh getopts.sh –abc cc –def ff // same
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Signals and Traps</h2>
+                <p>  </p>
+                <ul>
+                    <li>
+                        trap '' 2 // single quote, ignore ^c (SIGINT)
+                    </li>
+                    <li>
+                <p>while [ 1 = 1 ]  </p>
+                <p>do  </p>
+                <p>read a  </p>
+                <p>if [ $a = 'a' ]  </p>
+                <p>then  </p>
+                <p>exit  </p>
+                <p>else  </p>
+                <p>echo you pressed $a  </p>
+                <p>fi  </p>
+                <p>done  </p>
+                        
+                    </li>
+                    <li>
+                        $ ./trap.sh
+                    </li>
+                    <li>
+                        ^c^c^c^cqyou pressed q
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">File Handling</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        If [ -w writeFile || -x writeFile ]
+                    </li>
+                    <li>
+                        If [ -r writeFile && -s writeFile ]
+                    </li>
+                    <li>
+                        -d : directory
+                    </li>
+                    <li>
+                        -e : file exist
+                    </li>
+                    <li>
+                        -r : readable
+                    </li>
+                    <li>
+                        -w : writable
+                    </li>
+                    <li>
+                        -x : executable
+                    </li>
+                    <li>
+                        -s : size is greater than zero
                     </li>
                 </ul>
 
@@ -47,18 +332,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>
