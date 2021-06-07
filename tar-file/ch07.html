@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+            
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 7
+                    </div>
+                </h1>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Vi modes</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ vi
+                    </li>
+                    <li>
+                        $ vi finename
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Moving within a file</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        h,j,k,l (left,down,up,right)
+                    </li>
+                    <li>
+                        0,^(left most), $(right most)
+                    </li>
+                    <li>
+                        [Enter] (next line)
+                    </li>
+                    <li>
+                        Ctrl+f (one page forward)
+                    </li>
+                    <li>
+                        Ctrl+b (one page backward)
+                    </li>
+                    <li>
+                        Ctrl+u (harf page up)
+                    </li>
+                    <li>
+                        Ctrl+d (half page down
+                    </li>
+                    <li>
+                        :0, :1 (first line), :$ (last line) :100(100th line)
+                    </li>
+                    <li>
+                        Ctrl+% ( { <---> } )
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Searching</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        /string
+                    </li>
+                    <li>
+                        search string (forwards)
+                    </li>
+                    <li>
+                        n
+                    </li>
+                    <li>
+                        Go to next string
+                    </li>
+                    <li>
+                        N
+                    </li>
+                    <li>
+                        Go to previous string
+                    </li>
+                    <li>
+                        ?string
+                    </li>
+                    <li>
+                        Search backwards
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Exit / save</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        :q – quit (asks whether saving or not)
+                    </li>
+                    <li>
+                        :w – write to the file
+                    </li>
+                    <li>
+                        :wq : write and quit
+                    </li>
+                    <li>
+                        :q! – exit without saving
+                    </li>
+                    <li>
+                        :w! - overwrite
+                    </li>
+                    <li>
+                        :wq! – overwrite and exit
+                    </li>
+                    <li>
+                        ZZ – save and exit
+                    </li>
+                    <li>
+                        :x - exit
+                    </li>
+                    <li>
+                        :w filename – write to file filename
+                    </li>
+                    <li>
+                        :r filename – read and insert file filename
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">insert mode</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        i : insert
+                    </li>
+                    <li>
+                        a : append
+                    </li>
+                    <li>
+                        o : insert from next line
+                    </li>
+                    <li>
+                        [esc] : goto command mode
+                    </li>
+                    <li>
+                        you can press [esc] several times
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Delete</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        x – delete 1 character
+                    </li>
+                    <li>
+                        5x – delete 5 ch
+                    </li>
+                    <li>
+                        dd – delete 1 line
+                    </li>
+                    <li>
+                        3dd – delete 3 lines
+                    </li>
+                    <li>
+                        D – delete remaining line of this line from the cursor
+                    </li>
+                    <li>
+                        J – join current line and next line
+                    </li>
+                    <li>
+                        i[enter][esc] – separate line
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">change</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        r – replace 1 ch
+                    </li>
+                    <li>
+                        ra – 1 ch is chaged to 'a'
+                    </li>
+                    <li>
+                        3r – replace 3 ch
+                    </li>
+                    <li>
+                        3ra[esc] – 3 ch are changed to 'aaa'
+                    </li>
+                    <li>
+                        cw – change 1 word
+                    </li>
+                    <li>
+                        cwabc[esc] – word is changed to 'abc'
+                    </li>
+                    <li>
+                        cwab cd 12[esc] – word is changed to 'ab cd 12'
+                    </li>
+                    <li>
+                        3cw : change 3 words
+                    </li>
+                    <li>
+                        3cwabc[esc] – 3 words are changed to 'abc'
+                    </li>
+                    <li>
+                        3cwab cd 12[esc] – 3 words are changed to 'ab cd 12'
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Undo / redo</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        u : undo (cancel change)
+                    </li>
+                    <li>
+                        uu – cancel undo
+                    </li>
+                    <li>
+                        . : redo
+                    </li>
+                    <li>
+                        /abc // search 'abc
+                    </li>
+                    <li>
+                        cwABCD[esc] // change to 'ABCD'
+                    </li>
+                    <li>
+                        n. // search next and change to'ABCD'
+                    </li>
+                    <li>
+                        n. // search next and change to'ABCD'
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Copy and move</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Copy a line
+                    </li>
+                    <li>
+                        – yy -> [move] -> p
+                    </li>
+                    <li>
+                        $ Copy several lines
+                    </li>
+                    <li>
+                        – 3yy -> [move] -> p
+                    </li>
+                    <li>
+                        $ Move a line
+                    </li>
+                    <li>
+                        – dd -> [move] -> p
+                    </li>
+                    <li>
+                        $ Move several lines
+                    </li>
+                    <li>
+                        – 3dd -> [move] -> p
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Running commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        :%s/abc/ABCD/g
+                    </li>
+                    <li>
+                        change all 'abc' to 'ABCD' in file
+                    </li>
+                    <li>
+                        :10,$ s/abc/ABCD/g
+                    </li>
+                    <li>
+                        change all 'abc' to 'ABCD' from line 10 to the end of file
+                    </li>
+                    <li>
+                        :0,$ s/[Ctrl+V][Ctrll+M]//g
+                    </li>
+                    <li>
+                        delete all ^M character in file
+                    </li>
+                    <li>
+                        :100,200 w! filename
+                    </li>
+                    <li>
+                        save line 100 to 200 to file filename
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">miscellaneous</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        :set nu – show line number
+                    </li>
+                    <li>
+                        :set nonu – hide line number
+                    </li>
+                    <li>
+                        :sh
+                    </li>
+                    <li>
+                        go to sh temporary
+                    </li>
+                    <li>
+                        return to vi by $exit
+                    </li>
+                    <li>
+                        :!pwd
+                    </li>
+                    <li>
+                        run a command in vi
+                    </li>
+                    <li>
+                        press [enter] to edit continuously
+                    </li>
+                    <li>
+                        Ctrl+l – reset screen
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h4 class="ui header"></h4>
+                <p></p>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+
+        </div>
+    </body>
+</html>

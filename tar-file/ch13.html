@@ -17,7 +17,7 @@
                 <h1 class="ui red inverted left aligned block header">
                     18101279 Choi Min Jun
                     <div class="ui red inverted left aligned sub header">
-                        Unix Summary - Chapter 18
+                        Unix Summary - Chapter 13
                     </div>
                 </h1>
             </div>
@@ -26,23 +26,23 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Media Types</h2>
+                <h2 class="ui header">Script Language</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Magnetic Tapes
+                        Script is a program runs on the interpreter
                     </li>
                     <li>
-                        CD/DVD-ROM
+                        Unix Shell is an interpreter
                     </li>
                     <li>
-                        Zip drives
+                        – DOS Shell is an interpreter, too.
                     </li>
                     <li>
-                        Hard drive/network backup
+                        Shell reads the script and runs it directly line-by-line
                     </li>
                     <li>
-                        USB
+                        <-> Compile language like C/C++, must be compiled before running
                     </li>
                 </ul>
 
@@ -51,26 +51,17 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Types</h2>
+                <h2 class="ui header">Usage</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Full backup
-                    <li>
-                         – entire
-                    </li> 
+                        Shell Program (scripts) is used for System administration
                     </li>
                     <li>
-                        Differential Backup
+                        Automate a vast of range of jobs with a few simple scripts
                     </li>
                     <li>
-                        – that has changed since last full backup
-                    </li>
-                    <li>
-                        Incremental Backup
-                    </li>
-                    <li>
-                        – that has changed since the completion of any other type of backup
+                        – Boring and repetitive jobs
                     </li>
                 </ul>
 
@@ -78,138 +69,120 @@
 
 
 
-
             <div class="ui segment">
-                <h2 class="ui header">tar</h2>
+                <h2 class="ui header">Script file</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Tape archive
+                        #!/bin/sh
                     </li>
                     <li>
-                        c : creates
+                        – Executed by /bin/sh
                     </li>
                     <li>
-                        t : shows contents
+                        – Shebang : hash(#), bang(!)
                     </li>
                     <li>
-                        x : extracts
+                        # : comments
                     </li>
                     <li>
-                        v : verbose
+                        Variable=value
                     </li>
                     <li>
-                        f : set filename
+                        – a=1
                     </li>
                     <li>
-                        tar cvf mydir.tar mydir
+                        – a=`expr $a+1` // back quote
                     </li>
                     <li>
-                        tar tvf mydir.tar
+                        read var
                     </li>
                     <li>
-                        tar xvf mydir.tar
+                        – Read from keyboard and save to variable var
                     </li>
                 </ul>
 
             </div>
             <div class="ui segment">
-                <img src="asset/ch18-1.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-2.png">
+                <img src="asset/ch13-1.png">
             </div>
 
 
 
-
-
             <div class="ui segment">
-                <h2 class="ui header">compress</h2>
+                <h2 class="ui header">Special Variables</h2>
                 <p></p>
                 <ul>
                     <li>
-                        compress mydir.tar
+                        ? : previous command’s exit status
                     </li>
                     <li>
-                        – > Mydir.tar.Z
+                        $ : PID if the current shell
                     </li>
                     <li>
-                        uncopmress mydir.tar
+                        - : Options at the start-up
                     </li>
                     <li>
-                        gzip mydir.tar
+                        ! : PID of the last background process
                     </li>
                     <li>
-                        – > mydir.tar.gz
+                        0 : script name
                     </li>
                     <li>
-                        gzip –d mydir.tar.gz
+                        1-9 : command-line arguments 1-9
                     </li>
                     <li>
-                        gunzip mydir.tar.gz
+                        - : last argument
                     </li>
                 </ul>
 
             </div>
             <div class="ui segment">
-                <img src="asset/ch18-3.png">
+                <img src="asset/ch13-2.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch13-3.png">
             </div>
 
 
 
-
-
             <div class="ui segment">
-                <h2 class="ui header">example</h2>
+                <h2 class="ui header">Flow Control</h2>
                 <p></p>
                 <ul>
                     <li>
-                        $ tar cvf mydir.tar mydir
+                        Test command
                     </li>
                     <li>
-                        $ compress mydir.tar
+                        – test expression
                     </li>
                     <li>
-                        $ ftp 10.10.54.75
+                        – [ expression ]
                     </li>
                     <li>
-                        Login using id/passwd
+                        Operator : =, <, >, !=
                     </li>
                     <li>
-                        ftp> bi
+                        Conditional Flow Control
                     </li>
                     <li>
-                        ftp> put mydir.tar.Z
+                        – If-then-fi, if-then-else-fi, case-in-esac
                     </li>
                     <li>
-                        ftp > quit
+                        Iterative Flow Control
                     </li>
                     <li>
-                        $ telnet 10.10.54.75
-                    </li>
-                    <li>
-                        Login using id/passwd
-                    </li>
-                    <li>
-                        $ uncompress mydir.tar.Z
-                    </li>
-                    <li>
-                        $ tar xvf mydir.tar
+                        – While-do-done, until-do-done
                     </li>
                 </ul>
 
             </div>
             <div class="ui segment">
-                <img src="asset/ch18-4.png">
+                <img src="asset/ch13-4.png">
             </div>
             <div class="ui segment">
-                <img src="asset/ch18-5.png">
+                <img src="asset/ch13-5.png">
             </div>
-            <div class="ui segment">
-                <img src="asset/ch18-6.png">
-            </div>
-
 
 
             <div class="ui segment">
@@ -222,7 +195,6 @@
                 </ul>
 
             </div>
-
 
 
         </div>

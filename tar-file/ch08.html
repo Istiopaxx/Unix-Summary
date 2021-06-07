@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 8
+                    </div>
+                </h1>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Regular Expression</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        A syntactical set or phrase that represents a pattern of text or strings
+                    </li>
+                    <li>
+                        Enables you to represent a varying array of characters with a much smaller set of predefined characters
+                    </li>
+                    <li>
+                        Often include metacharacters
+                    </li>
+                    <li>
+                        Metacharacters : characters that represent another set or group of characters or commands
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Meta characters</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        . (dot, period) : a character
+                    </li>
+                    <li>
+                        [] (square brackets) : any one of inside in it
+                    </li>
+                    <li>
+                        * (asterisk, splat) : zero or more characters
+                    </li>
+                    <li>
+                        [^.*] (caret) : do not match any one of inside in it
+                    </li>
+                    <li>
+                        ^.* (caret) : match at the beginning
+                    </li>
+                    <li>
+                        ^.*[.*] : match at the beginning and match inside in it
+                    </li>
+                    <li>
+                        $ (dollar) : match at the end of line
+                    </li>
+                    <li>
+                        \ (backslash) : remove special meaning of the following character
+                    </li>
+                    <li>
+                        ? (question mark) : zero or one character
+                    </li>
+                    <li>
+                        [a-z] : match all occurrences of any single letter
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Regular Expression</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        [0-9] [0-9] [0-9]\.[0-9][0-9] [0-9]\.[0-9][0-9][0-9] -> U.S. Telephone number
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">FTP (file transfer protocol)</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        C:\> ftp 10.10.54.75
+                    </li>
+                    <li>
+                        Id/passwd
+                    </li>
+                    <li>
+                        > cd publuc_html
+                    </li>
+                    <li>
+                        > dir (or ls)
+                    </li>
+                    <li>
+                        > asc
+                    </li>
+                    <li>
+                        > put a.html
+                    </li>
+                    <li>
+                        > get b.html
+                    </li>
+                    <li>
+                        > mput *.html
+                    </li>
+                    <li>
+                        > bi
+                    </li>
+                    <li>
+                        > put my.jpg
+                    </li>
+                    <li>
+                        > quit
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">grep</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ print lines that has the string
+                    </li>
+                    <li>
+                        $ grep unix30 /etc/passwd
+                    </li>
+                    <li>
+                        $ gat /etc/passwd | grep unix30
+                    </li>
+                    <li>
+                        $ grep –v // opposite
+                    </li>
+                    <li>
+                        $ grep –i // ignore case
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">find</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Find files in directory structure
+                    </li>
+                    <li>
+                        $ find / -name core
+                    </li>
+                    <li>
+                        $ find /export –user unix300
+                    </li>
+                    <li>
+                        $ find /export –user unix300
+                    </li>
+                    <li>
+                        $ find /export –user unix300
+                    </li>
+                    <li>
+                        $ find / -name core 2> /dev/null
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">sort</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ sort –t: +1 /etc/group
+                    </li>
+                    <li>
+                        $ head /etc/passwd | sort –r > pass.txt
+                    </li>
+                    <li>
+                        $ -f : ignore case
+                    </li>
+                    <li>
+                        $ -r : reversed order
+                    </li>
+                    <li>
+                        $ -t : set delimiter (field separator)
+                    </li>
+                    <li>
+                        $ -o : set output file
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch08-1.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch08-2.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Tee/script</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Tee : split output (screen and file)
+                    </li>
+                    <li>
+                        – $ ps –ef | tee ps.txt
+                    </li>
+                    <li>
+                        – $ telnet 10.10.54.75 | tee telnet.txt
+                    </li>
+                    <li>
+                        Script : record interactive login session
+                    </li>
+                    <li>
+                        – $ script [-a filename]
+                    </li>
+                    <li>
+                        – $ unix commands
+                    </li>
+                    <li>
+                        – $ …
+                    </li>
+                    <li>
+                        – $ exit // script is ended
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Unix utilities</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        wc : word count
+                    </li>
+                    <li>
+                        cut : extract character or words
+                    </li>
+                    <li>
+                        paste : file merge
+                    </li>
+                    <li>
+                        tr : translate character
+                    </li>
+                    <li>
+                        split : file divide
+                    </li>
+                    <li>
+                        uniq : file compare
+                    </li>
+                    <li>
+                        cmp : file compare
+                    </li>
+                    <li>
+                        comm : file compare
+                    </li>
+                    <li>
+                        diff : file compare
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h4 class="ui header"></h4>
+                <p></p>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </body>
+</html>

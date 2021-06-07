@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+            
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 4
+                    </div>
+                </h1>
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Contents</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ File system architecture
+                    </li>
+                    <li>
+                        $ Root directory
+                    </li>
+                    <li>
+                        $ Navigate file system
+                    </li>
+                    <li>
+                        $ Create/remove a file
+                    </li>
+                    <li>
+                        $ Rename/move a file
+                    </li>
+                    <li>
+                        $ Find
+                    </li>
+                    <li>
+                        $ Chmod
+                    </li>
+                    <li>
+                        $ File system management
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">Root directory (1)</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ / : root directory of the entire file system hierarchy
+                    </li>
+                    <li>
+                        $ /devices : physical device files
+                    </li>
+                    <li>
+                        $ /dev : logical device files
+                    </li>
+                    <li>
+                        $ /etc : host-specific system-wide configuration files
+                    </li>
+                    <li>
+                        /etc is referred to as the etcetera directory, as this directory
+                            historically held everything that did not belong elsewhere.
+                            Recent interpretations include backronyms such as "Editable
+                            Text Configuration" or "Extended Tool Chest"
+                    </li>
+                    <li>
+                        $ /mnt : temporarily mounted filesystems.
+                    </li>
+                    <li>
+                        $ /opt : optional application software packages
+                    </li>
+                    <li>
+                        $ /proc : virtual filesystem providing process and kernel information as files
+                    </li>
+                    <li>
+                        $ /tmp : temporary files. Not preserved between system reboots.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">Root directory (2)</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ /bin : command binaries (same with /usr/bin)
+                    </li>
+                    <li>
+                        $ /sbin : Non-essential system binaries, e.g., daemons for various network-services
+                    </li>
+                    <li>
+                        $ /usr : used for miscellaneous purpose – /usr/bin, /usr/lib, /usr/include
+                    </li>
+                    <li>
+                        $ /lib : libraries for the binaries in /usr/bin/ and /usr/sbin/ (same with /usr/lib)
+                    </li>
+                    <li>
+                        $ /var : Variable files whose content is expected to continually
+                        change during normal operation of the system., such as
+                        logs, spool files, and temporary e-mail files.
+                    </li>
+                    <li>
+                        $ /home : Users' home directories(Now user’s home is in /export/home)
+                    </li>
+                    <li>
+                        $ /export : open contains remote file systems
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">Navigating file system</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ echo hi > hi.txt
+                    </li>
+                    <li>
+                        $ ls
+                    </li>
+                    <li>
+                        $ cat hi.txt
+                    </li>
+                    <li>
+                        $ more /etc/passwd
+                    </li>
+                    <li>
+                        $ less /etc/group
+                    </li>
+                    <li>
+                        $ head -5 /etc/hosts
+                    </li>
+                    <li>
+                        $ tail –f /var/log/syslog
+                    </li>
+                    <li>
+                        $ pg /etc/profile
+                    </li>
+                    <li>
+                        $ cd /usr/bin
+                    </li>
+                    <li>
+                        $ pwd
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">Create file</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ cp hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ mv hi2.txt hi3.txt
+                    </li>
+                    <li>
+                        $ rm hi3.txt
+                    </li>
+                    <li>
+                        $ touch a.txt
+                    </li>
+                    <li>
+                        $ touch hi.txt
+                    </li>
+                    <li>
+                        $ mkdir dir1
+                    </li>
+                    <li>
+                        $ mv dir1 dir2
+                    </li>
+                    <li>
+                        $ rmdir dir2
+                    </li>
+                    <li>
+                        $ whereis echo
+                    </li>
+                    <li>
+                        $ which echo
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Create text file</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ echo hi > hi.txt
+                    </li>
+                    <li>
+                        $ echo hello >> hi.txt
+                    </li>
+                    <li>
+                        $ cp hi.txt hello.txt
+                    </li>
+                    <li>
+                        $ cat > aa.txt
+                    </li>
+                    <li>
+                        Good morning
+                    </li>
+                    <li>
+                        See you~
+                    </li>
+                    <li>
+                        ^d
+                    </li>
+                    <li>
+                        $ cat aa.txt
+                    </li>
+                    <li>
+                        $ head -5 /etc/passwd > pass.txt
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">touch</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ echo Hello > h.txt
+                    </li>
+                    <li>
+                        $ touch aa.txt
+                    </li>
+                    <li>
+                        – aa.txt is a new file name
+                    </li>
+                    <li>
+                        – creat a file of size zero(0)
+                    </li>
+                    <li>
+                        $ touch h.txt
+                    </li>
+                    <li>
+                        – h.txt is existing file
+                    </li>
+                    <li>
+                        – change last edit time to now
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-1.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-2.png">
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">cp and mv</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ cp hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ cp hi.txt dir1
+                    </li>
+                    <li>
+                        $ cp hi.txt dir1/hi3.txt
+                    </li>
+                    <li>
+                        $ mv hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ mv hi.txt dir1
+                    </li>
+                    <li>
+                        $ mv hi.txt dir1/hi2.txt
+                    </li>
+                    <li>
+                        $ mv dir1 dir2
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">rm</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ remove file
+                    </li>
+                    <li>
+                        $ rm h*.txt
+                        – Remove text file starting with h
+                    </li>
+                    <li>
+                        $ Rm dir1/*.txt
+                        – Remove all files in dir1 directory
+                    </li>
+                    <li>
+                        $ If ($ rmdir dir1) fails
+                        – remove all files and subdirectory in dir1
+                        – remove dir1
+                    </li>
+                    <li>
+                        $ rm –rf dir1
+                        – Remove all files in dir1 directory and remove dir1
+                        without asking at one time (must be careful)
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">ls -l</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ ls –l
+                            -rw-r--r-- 1 unix300 other 3 3월30일00:03 hi.txt
+                            drwxr-xr-x 2 unix300 other 512 3월23일00:39 dir1
+                    </li>
+                    <li>
+                        $ File type : permission : link number : owner : group : last edittong time : file name
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">File types</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ First character of ‘ls –l’ command
+                    </li>
+                    <li>
+                        d : The entry is a directory
+                    </li>
+                    <li>
+                        b : The entry is a block special file
+                    </li>
+                    <li>
+                        c : The entry is a character special file
+                    </li>
+                    <li>
+                        l : The entry is a symbolic link
+                    </li>
+                    <li>
+                        p : The entry is a first-in, first-out (FIFO) special file (pipe)
+                    </li>
+                    <li>
+                        s : The entry is a local socket
+                    </li>
+                    <li>
+                        - : The entry is an ordinary file
+                    </li>
+                    <li>
+                        $ File hi.txt (unix command)
+                        – Display file type
+                        – hi.txt : ASCII Text
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">permission</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ rw-r--r--
+                    </li>
+                    <li>
+                        $ User/owner(rw-), group(r--), other(r--)
+                    </li>
+                    <li>
+                        $ R(Read), w(write), x(execute)
+                    </li>
+                    <li>
+                        – File readable : cat possible
+                    </li>
+                    <li>
+                        – File writable : can edit
+                    </li>
+                    <li>
+                        – File executable : can run that file (program)
+                    </li>
+                    <li>
+                        – Directory readable : ls possible
+                    </li>
+                    <li>
+                        – Directory writable : create/delete possible
+                    </li>
+                    <li>
+                        – Directory executable : cd possible
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">Link number</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Link is a connection between a file name and a file (hard link)
+                    </li>
+                    <li>
+                        $ 2 types of link
+                    </li>
+                    <li>
+                         – (Hard) link
+                    </li>
+                    <li>
+                        – Soft link (symbolic link)
+                    </li>
+                    <li>
+                        $ ln hi.txt hi2.txt
+                    </li>
+                    <li>
+                        – Create a new file name (increase link number)
+                    </li>
+                    <li>
+                        $ ln –s hi.txt hi3.txt
+                    </li>
+                    <li>
+                        – Make a new soft link
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">cp</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ echo Hi~ > hi.txt
+                    </li>
+                    <li>
+                        $ cp hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ ls -i
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">ln</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ ln hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ ls -il
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-3.png">
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">ln –s</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ ln -s hi.txt hi2.txt
+                    </li>
+                    <li>
+                        $ ln -s /export/home/unix300/hi.txt hi3.txt
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-4.png">
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">Contents/Information</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ File contents : in data blocks
+                    </li>
+                    <li>
+                        – $ cat, more, less, pg, head, tail
+                    </li>
+                    <li>
+                        $ File information : in i-node
+                    </li>
+                    <li>
+                        – $ ls -l
+                    </li>
+                    <li>
+                        $ Directory contents : $ ls –i (in data blocks)
+                    </li>
+                    <li>
+                        $ Directory information : $ ls –ld (in i-node)
+                    </li>
+                    <li>
+                        $ echo 123456 > 123.txt
+                    </li>
+                    <li>
+                        $ cat 123.txt
+                    </li>
+                    <li>
+                        $ od –x 123.txt
+                    </li>
+                    <li>
+                        $ od –c 123.txt
+                    </li>
+                </ul>
+
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">find</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ find /export/home –name ‘hi.txt’
+                    </li>
+                    <li>
+                        – Find a file hi.txt under the directory /export/home
+                    </li>
+                    <li>
+                        $ find / -name core 2> /dev/null
+                    </li>
+                    <li>
+                        – Find a file and hide error message
+                    </li>
+                    <li>
+                        $ find / -name core > out.txt 2> /dev/null
+                    </li>
+                    <li>
+                        – Find a file, save result to out.txt and hide error message
+                    </li>
+                    <li>
+                        $ find / -name “h*.txt” –exec cat {} \;
+                    </li>
+                    <li>
+                         – Find file, and cat the file
+                    </li>
+                    <li>
+                        $ find / -name “h*.txt” –ok cat {} \;
+                    </li>
+                    <li>
+                        – Find file, and cat that file if answer is yes
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-5.png">
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">chmod (symbolic)</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ chmod u+w,g-w,o=r-- hi.txt
+                    </li>
+                    <li>
+                        $ u(ser), g(roup), o(ther), a(ll)
+                    </li>
+                    <li>
+                        $ +(add), -(remove), =(set)
+                    </li>
+                    <li>
+                        $ r(ead),w(rite),x(excutable),-(no permission)
+                    </li>
+                    <li>
+                        $ chmod +x a.sh
+                    </li>
+                    <li>
+                        – same as chmod a+x a.sh
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-6.png">
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">chmod (numeric, octal)</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ chmod 644 hi.txt
+                    </li>
+                    <li>
+                        $ user, group, other
+                    </li>
+                    <li>
+                        $ 4(read),2(write),1(excutable),0(no)
+                    </li>
+                    <li>
+                        $ chmod 644 a.sh
+                    </li>
+                    <li>
+                        – chmod u=rw-,g=r--,o=r-- a.sh
+                    </li>
+                    <li>
+                        $ chmod 755 dir1
+                    </li>
+                    <li>
+                        – chmod u=rwx,g=r-x,o=r-x dir1
+                    </li>
+                    <li>
+                        $ chmod 700 a.sh
+                    </li>
+                    <li>
+                        – chmod u=rwx,g=---,o=--- a.sh
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-7.png">
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">umask</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Defines masking some permissions
+                    </li>
+                    <li>
+                        – When make a new file or a new directory
+                    </li>
+                    <li>
+                        $ Bit 1 masks permission (not give permit)
+                    </li>
+                    <li>
+                        $ umask [value]
+                    </li>
+                    <li>
+                        $ umask // see current value
+                    </li>
+                    <li>
+                        $ umask 022 // set umask as 022
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch04-8.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Default file/dir permission</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ 777 XOR umask -> DEF_DIR_MASK
+                    </li>
+                    <li>
+                        – default directory permission
+                    </li>
+                    <li>
+                        $ Remove x from DEF_DIR_MASK
+                    </li>
+                    <li>
+                        – default file permission
+                    </li>
+                    <li>
+                        $ Example
+                    </li>
+                    <li>
+                        – If umask is 022
+                    </li>
+                    <li>
+                        – 777 XOR 022 = 755
+                    </li>
+                    <li>
+                        • default directory permission
+                    </li>
+                    <li>
+                        – X remove from 755 = 644
+                    </li>
+                    <li>
+                        • default file permission
+                    </li>
+                </ul>
+
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">File system management</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ df : disk free
+                    </li>
+                    <li>
+                        – df –k : see kilobytes
+                    </li>
+                    <li>
+                        $ du : disk usage
+                    </li>
+                    <li>
+                        – du –sk * : see summary disk usage of each directory
+                    </li>
+                    <li>
+                        $ mount : see what is currently mounted
+                    </li>
+                    <li>
+                        – /etc/mnttab file reflects this information
+                    </li>
+                    <li>
+                        $ mount –t device_name mount_point
+                    </li>
+                    <li>
+                        – mount –t iso9600 /dev/cdrom /mnt/cdrom
+                    </li>
+                    <li>
+                        $ mountall
+                    </li>
+                    <li>
+                        – Mount all file system as defined /etc/vfstab file
+                    </li>
+                    <li>
+                        $ Umount : unmount device
+                    </li>
+                    <li>
+                        – Umount /mnt/cdrom
+                    </li>
+                    <li>
+                        – Umount /dev/cdrom
+                    </li>
+                    <li>
+                        $ Umountall : unmount all without / and core file system
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+    </body>
+</html>

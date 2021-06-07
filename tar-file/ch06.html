@@ -17,7 +17,7 @@
                 <h1 class="ui red inverted left aligned block header">
                     18101279 Choi Min Jun
                     <div class="ui red inverted left aligned sub header">
-                        Unix Summary - Chapter 18
+                        Unix Summary - Chapter 6
                     </div>
                 </h1>
             </div>
@@ -26,23 +26,32 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Media Types</h2>
+                <h2 class="ui header">Anatomy of a Command</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Magnetic Tapes
+                        $ Command [options] [arguments]
                     </li>
                     <li>
-                        CD/DVD-ROM
+                        – $ ls –sCF /usr/bin
                     </li>
                     <li>
-                        Zip drives
+                        – $ ls –s –C –F /etc
                     </li>
                     <li>
-                        Hard drive/network backup
+                        $ man ls
                     </li>
                     <li>
-                        USB
+                        $ apropos ls
+                    </li>
+                    <li>
+                        – Find related files
+                    </li>
+                    <li>
+                        $ whereis echo
+                    </li>
+                    <li>
+                        $ which echo
                     </li>
                 </ul>
 
@@ -51,26 +60,29 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Types</h2>
+                <h2 class="ui header">Meta Characters</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Full backup
-                    <li>
-                         – entire
-                    </li> 
+                        $ Wildcard
                     </li>
                     <li>
-                        Differential Backup
+                        – ? : matches any one character
                     </li>
                     <li>
-                        – that has changed since last full backup
+                        – *: matches character or characters
                     </li>
                     <li>
-                        Incremental Backup
+                        – [] : matches one of the characters in […]
                     </li>
                     <li>
-                        – that has changed since the completion of any other type of backup
+                        $ ls *.txt
+                    </li>
+                    <li>
+                        $ ls hi?.txt
+                    </li>
+                    <li>
+                        $ ls hi[12357].txt
                     </li>
                 </ul>
 
@@ -78,137 +90,109 @@
 
 
 
-
             <div class="ui segment">
-                <h2 class="ui header">tar</h2>
+                <h2 class="ui header">Redirection</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Tape archive
+                        $ ls > ls.txt
                     </li>
                     <li>
-                        c : creates
+                        $ sort < /etc/group
                     </li>
                     <li>
-                        t : shows contents
+                        $ sort < /etc/group > sort.txt
                     </li>
                     <li>
-                        x : extracts
+                        $ mkdir dir1
                     </li>
                     <li>
-                        v : verbose
+                        $$ mkdir dir1 2> err.txt
                     </li>
                     <li>
-                        f : set filename
+                        $ find / -name "hi.txt" 2> /dev/null
                     </li>
                     <li>
-                        tar cvf mydir.tar mydir
+                        $ find /export/home –name "hi.txt" > out.txt 2>&1
                     </li>
                     <li>
-                        tar tvf mydir.tar
-                    </li>
-                    <li>
-                        tar xvf mydir.tar
+                        $ find /export/home –name "hi.txt" 2> out.txt 1>&2
                     </li>
                 </ul>
 
             </div>
-            <div class="ui segment">
-                <img src="asset/ch18-1.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-2.png">
-            </div>
-
-
 
 
 
             <div class="ui segment">
-                <h2 class="ui header">compress</h2>
+                <h2 class="ui header">Pipes</h2>
                 <p></p>
                 <ul>
                     <li>
-                        compress mydir.tar
+                        $ Who | wc
                     </li>
                     <li>
-                        – > Mydir.tar.Z
+                        $ Cat /etc/passwd | grep unix30
                     </li>
                     <li>
-                        uncopmress mydir.tar
+                        $ Echo $PATH
                     </li>
                     <li>
-                        gzip mydir.tar
+                        $ Echo ${PATH}${TERM}
                     </li>
                     <li>
-                        – > mydir.tar.gz
+                        $ Echo “$PATH”
                     </li>
                     <li>
-                        gzip –d mydir.tar.gz
+                        $ Echo "$PATH"
                     </li>
                     <li>
-                        gunzip mydir.tar.gz
+                        $ Echo "\HPATH:
+                    </li>
+                    <li>
+                        $ Echo today is `date`
                     </li>
                 </ul>
 
             </div>
-            <div class="ui segment">
-                <img src="asset/ch18-3.png">
-            </div>
-
-
 
 
 
             <div class="ui segment">
-                <h2 class="ui header">example</h2>
+                <h2 class="ui header">Quotas</h2>
                 <p></p>
                 <ul>
                     <li>
-                        $ tar cvf mydir.tar mydir
+                        $ A limit on the amount of disk space each user is allocated
                     </li>
                     <li>
-                        $ compress mydir.tar
+                        $ /etc/vfstab enable quotas option
                     </li>
                     <li>
-                        $ ftp 10.10.54.75
+                        – (usrquota,grpquota) should be set
                     </li>
                     <li>
-                        Login using id/passwd
+                        $ quotacheck –acug /export/home
                     </li>
                     <li>
-                        ftp> bi
+                        $ cd /export/home
                     </li>
                     <li>
-                        ftp> put mydir.tar.Z
+                        $ touch quotas
                     </li>
                     <li>
-                        ftp > quit
+                        $ chmod 600 quotas
                     </li>
                     <li>
-                        $ telnet 10.10.54.75
+                        $ edquota user-id
                     </li>
                     <li>
-                        Login using id/passwd
-                    </li>
-                    <li>
-                        $ uncompress mydir.tar.Z
-                    </li>
-                    <li>
-                        $ tar xvf mydir.tar
+                        – soft, hard, i-nodes
                     </li>
                 </ul>
 
             </div>
-            <div class="ui segment">
-                <img src="asset/ch18-4.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-5.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-6.png">
-            </div>
+
 
 
 
@@ -222,6 +206,12 @@
                 </ul>
 
             </div>
+
+
+
+
+
+
 
 
 

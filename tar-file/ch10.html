@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+            
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 10
+                    </div>
+                </h1>
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Process</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        An instance of running program
+                    </li>
+                    <li>
+                        PID : process identifier (1 – 32768)
+                    </li>
+                    <li>
+                        PPID : parent PID
+                    </li>
+                    <li>
+                        pid 0 : schedule demon
+                    </li>
+                    <li>
+                        pid 1 : init process
+                    </li>
+                    <li>
+                        $ ps [–l] // see (my own) process
+                    </li>
+                    <li>
+                        $ ps –ef // see all process
+                    </li>
+                    <li>
+                        $ echo $$ // see current shell pid
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-1.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-2.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Shell Scripts</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        # : comments
+                    </li>
+                    <li>
+                        #! : sh-bang
+                    </li>
+                    <li>
+                        – Tell the kernel to run the program listed after the #!
+                    </li>
+                    <li>
+                        my.sh
+                    </li>
+                    <li>
+                        – #!/bin/cat
+                    </li>
+                    <li>
+                        – Hello World
+                    </li>
+                    <li>
+                        – ^d
+                    </li>
+                    <li>
+                        chmod u+x my.sh
+                    </li>
+                    <li>
+                        ./my.sh
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-3.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Stopping process</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Ctrl + C (^C)
+                    </li>
+                    <li>
+                        – Stop current process
+                    </li>
+                    <li>
+                        kill commands
+                    </li>
+                    <li>
+                        – Send SIGNAL to process
+                    </li>
+                    <li>
+                        kill –l
+                    </li>
+                    <li>
+                        – List signal names
+                    </li>
+                    <li>
+                        kill -9 pid
+                    </li>
+                    <li>
+                        – Kill –KILL pid
+                    </li>
+                    <li>
+                        pkill program_name
+                    </li>
+                    <li>
+                        – $ pkill sleep
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-4.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-10.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/proc file system</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Contains a directory entry for active process named after PID
+                    </li>
+                    <li>
+                        $ ls –l /proc/$$
+                    </li>
+                    <li>
+                        $ ls –l /proc/1
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-5.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">SETUID</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        When a regular user runs a program that are set a SETUID bit, the effective UID is changed to the UID of the program owner
+                    </li>
+                    <li>
+                        /usr/bin/passwd
+                    </li>
+                    <li>
+                        /usr/bin/crontab
+                    </li>
+                    <li>
+                        $ find / -perm -4000
+                    </li>
+                    <li>
+                        $ chmod u+s myprog
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-6.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-7.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">SETGID</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        When a regular user runs a program that are set a SETUID bit, the effective GID is changed to the GID of the program owner
+                    </li>
+                    <li>
+                        /usr/bin/mail
+                    </li>
+                    <li>
+                        $ find / -perm -2000
+                    </li>
+                    <li>
+                        $ chmod g+s myprog
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-8.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-9.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Job Control</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Two type of process
+                    </li>
+                    <li>
+                        – Foreground : seize the terminal
+                    </li>
+                    <li>
+                        – Background : release the terminal
+                    </li>
+                    <li>
+                        & (ampersand)
+                    </li>
+                    <li>
+                        – Start as a background
+                    </li>
+                    <li>
+                        – $ sleep 60 &
+                    </li>
+                    <li>
+                        $ jobs
+                    </li>
+                    <li>
+                        $ ps
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Job commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Jobs // list jobs
+                    </li>
+                    <li>
+                        Fg [%n] // change to foreground
+                    </li>
+                    <li>
+                        Bg [%n] // change to background
+                    </li>
+                    <li>
+                        Kill %n // kill process
+                    </li>
+                    <li>
+                        Kill -18 %n // resume process
+                    </li>
+                    <li>
+                        Kill -19 %n // stop process
+                    </li>
+                    <li>
+                        Kill -9 pid // kill process
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch10-11.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h4 class="ui header"></h4>
+                <p></p>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+        </div>
+    </body>
+</html>

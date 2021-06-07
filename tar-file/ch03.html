@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 2
+                    </div>
+                </h1>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Contents</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Accounts
+                    </li>
+                    <li>
+                        $ /etc/passwd file
+                    </li>
+                    <li>
+                        $ /etc/group file
+                    </li>
+                    <li>
+                        $ /etc/shadow file
+                    </li>
+                    <li>
+                        $ Password aging
+                    </li>
+                    <li>
+                        $ su
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">3 primary types of accounts</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Root Accounts
+                    </li>
+                    <li>
+                        – Super user
+                    </li>
+                    <li>
+                        – Complete and unfettered control of the system
+                    </li>
+                    <li>
+                        – No restrictions
+                    </li>
+                    <li>
+                        $ System Accounts
+                    </li>
+                    <li>
+                        – Needed for the operation of system-specific components
+                    </li>
+                    <li>
+                        – Mail, bin, adm, daemon, noaccess, nobody
+                    </li>
+                    <li>
+                        $ User Accounts
+                    </li>
+                    <li>
+                        – Limited access
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/passwd</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Identifies the authorized accounts for the system
+                    </li>
+                    <li>
+                        $ head -1 /etc/passwd
+                    </li>
+                    <li>
+                        $ root:x:0:1:Super-User:/:/bin/csh
+                    </li>
+                    <li>
+                        $ root : login ID
+                    </li>
+                    <li>
+                        $ x : not used
+                    </li>
+                    <li>
+                        $ 0 : UID
+                    </li>
+                    <li>
+                        $ 1 : GID
+                    </li>
+                    <li>
+                        $ Super-User : Comments
+                    </li>
+                    <li>
+                        $ / : Home Directo
+                    </li>
+                    <li>
+                        $ /bin/csh : Login shell
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch03-1.png">
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/group</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ cat /etc/group
+                        <p>root::0:root</p>
+                        <p>other::1:</p>
+                        <p>bin::2:root,bin,daemon,khlee</p>
+                        <p>sys::3:root,bin,sys,adm</p>
+                        <p>adm::4:root,adm,daemon</p>
+                        <p>mail::6:root</p>
+                    
+                    </li>
+                    <li>
+                        $ last field : members (secondary group)
+                    </li>
+                    <li>
+                        $ Primary group information is in /etc/passwd
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch03-2.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/shadow</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ ls -l /etc/shadow
+                        <p>-r-------- 1 root sys 5350 4월1일01:07 /etc/shadow</p>
+                    </li>
+                    <li>
+                        $ su
+                        <p>password:</p>
+                        <p># cat /etc/shadow</p>
+                        <p>root:62rmkjdR3h5Pk:11944::::::</p>
+                        <p>listen:*LK*:::::::</p>
+                        <p>nobody:NP:6445::::::</p>
+                        <p>unix306:uAJSB7ZC0suPM:16503::::::</p>
+                        <p>unix307::16503::::::</p>
+                    </li>
+                    <li>
+                        $ NP for no password is valid
+                    </li>
+                    <li>
+                        $ *LK* meaning the account is locked until the superuser sets a password
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">Password Aging</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ login-id:password:lastchg:min:max:warn:inactive:expire:flag
+                    </li>
+                    <li>
+                        $ login-id : login name
+                    </li>
+                    <li>
+                        $ Password : 13 character encrypted password
+                    </li>
+                    <li>
+                        $ Lastchg : number of days from Jan 1, 1970 to the last password change
+                    </li>
+                    <li>
+                        $ Min : minimum number of days required between password changes
+                    </li>
+                    <li>
+                        $ Max : maximum number of days the password is valid
+                    </li>
+                    <li>
+                        $ warn : number of days before expiring the password that the user is warned
+                    </li>
+                    <li>
+                        $ Inactive : number of days of inactivity allowed for the user
+                    </li>
+                    <li>
+                        $ Expire : absolute date after which the login may no longer be used
+                    </li>
+                    <li>
+                        $ flag : currently not used
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">su</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ substitute user (switch user)
+                    </li>
+                    <li>
+                        $ su [-] [id]
+                    </li>
+                    <li>
+                        – Command syntax
+                    </li>
+                    <li>
+                        $ su unix345
+                    </li>
+                    <li>
+                        $ su – unix345
+                    </li>
+                    <li>
+                        – Changed to unix345 environment
+                    </li>
+                    <li>
+                        – You can check this with $pwd command
+                    </li>
+                    <li>
+                        $ su
+                    </li>
+                    <li>
+                        – Switch to root user
+                    </li>
+                    <li>
+                        $ su -
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch03-3.png">
+            </div>
+
+            
+        </div>
+    </body>
+</html>

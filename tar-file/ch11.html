@@ -12,12 +12,13 @@
     <body>
         <div class="ui container">
 
-            
+
+
             <div class="ui segment">
                 <h1 class="ui red inverted left aligned block header">
                     18101279 Choi Min Jun
                     <div class="ui red inverted left aligned sub header">
-                        Unix Summary - Chapter 18
+                        Unix Summary - Chapter 11
                     </div>
                 </h1>
             </div>
@@ -26,23 +27,14 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Media Types</h2>
+                <h2 class="ui header">System clock</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Magnetic Tapes
+                        Date
                     </li>
                     <li>
-                        CD/DVD-ROM
-                    </li>
-                    <li>
-                        Zip drives
-                    </li>
-                    <li>
-                        Hard drive/network backup
-                    </li>
-                    <li>
-                        USB
+                        Date 201505050001.30
                     </li>
                 </ul>
 
@@ -51,26 +43,112 @@
 
 
             <div class="ui segment">
-                <h2 class="ui header">Backup Types</h2>
+                <h2 class="ui header">Scheduling commands</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Full backup
-                    <li>
-                         – entire
-                    </li> 
+                        cron
                     </li>
                     <li>
-                        Differential Backup
+                        – periodic
                     </li>
                     <li>
-                        – that has changed since last full backup
+                        – crond (daemon), crontab(file)
                     </li>
                     <li>
-                        Incremental Backup
+                        – crontab –e (edit), -l (list), -r (remove)
                     </li>
                     <li>
-                        – that has changed since the completion of any other type of backup
+                        at
+                    </li>
+                    <li>
+                        – one time
+                    </li>
+                    <li>
+                        – atd
+                    </li>
+                    <li>
+                        – at –t
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch11-1.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">crontab</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        EDITOR=vi
+                    </li>
+                    <li>
+                        export EDITOR
+                    </li>
+                    <li>
+                        crontab –e
+                    </li>
+                    <li>
+                        – Minute : 0-59
+                    </li>
+                    <li>
+                        – Hour : 0-23
+                    </li>
+                    <li>
+                        – Day of month : 1-31
+                    </li>
+                    <li>
+                        – Month : 1-12
+                    </li>
+                    <li>
+                        – Day of week : 0-7
+                    </li>
+                    <li>
+                        – Command
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch11-2.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Crontab expression</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Comma and no space
+                    </li>
+                    <li>
+                        – 0,2,5,7,9
+                    </li>
+                    <li>
+                        Through
+                    </li>
+                    <li>
+                        – 1-5
+                    </li>
+                    <li>
+                        Every
+                    </li>
+                    <li>
+                        – *
+                    </li>
+                    <li>
+                        Step
+                    </li>
+                    <li>
+                        – 10-16/2
+                    </li>
+                    <li>
+                        – 10,12,14,16
                     </li>
                 </ul>
 
@@ -78,136 +156,86 @@
 
 
 
-
             <div class="ui segment">
-                <h2 class="ui header">tar</h2>
+                <h2 class="ui header">Managing out from cron</h2>
                 <p></p>
                 <ul>
                     <li>
-                        Tape archive
+                        Commands | mail –s "…" username
                     </li>
                     <li>
-                        c : creates
+                        – -s : subject
                     </li>
                     <li>
-                        t : shows contents
+                        – Usermame
                     </li>
                     <li>
-                        x : extracts
+                        Redirect to log file
                     </li>
                     <li>
-                        v : verbose
+                        – Command >> log.file
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Controlling access to cron/st</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        /etc/cron.allow
                     </li>
                     <li>
-                        f : set filename
+                        – username
                     </li>
                     <li>
-                        tar cvf mydir.tar mydir
+                        /etc/cron.deny
                     </li>
                     <li>
-                        tar tvf mydir.tar
+                        – Username
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">at</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        One time execution
                     </li>
                     <li>
-                        tar xvf mydir.tar
+                        atq
+                    </li>
+                    <li>
+                        atrm
+                    </li>
+                    <li>
+                        at 17:00
+                    </li>
+                    <li>
+                        at 5pm
+                    </li>
+                    <li>
+                        at noon
+                    </li>
+                    <li>
+                        at 4pm + 3 days
+                    </li>
+                    <li>
+                        at –f at.file
                     </li>
                 </ul>
 
             </div>
             <div class="ui segment">
-                <img src="asset/ch18-1.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-2.png">
-            </div>
-
-
-
-
-
-            <div class="ui segment">
-                <h2 class="ui header">compress</h2>
-                <p></p>
-                <ul>
-                    <li>
-                        compress mydir.tar
-                    </li>
-                    <li>
-                        – > Mydir.tar.Z
-                    </li>
-                    <li>
-                        uncopmress mydir.tar
-                    </li>
-                    <li>
-                        gzip mydir.tar
-                    </li>
-                    <li>
-                        – > mydir.tar.gz
-                    </li>
-                    <li>
-                        gzip –d mydir.tar.gz
-                    </li>
-                    <li>
-                        gunzip mydir.tar.gz
-                    </li>
-                </ul>
-
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-3.png">
-            </div>
-
-
-
-
-
-            <div class="ui segment">
-                <h2 class="ui header">example</h2>
-                <p></p>
-                <ul>
-                    <li>
-                        $ tar cvf mydir.tar mydir
-                    </li>
-                    <li>
-                        $ compress mydir.tar
-                    </li>
-                    <li>
-                        $ ftp 10.10.54.75
-                    </li>
-                    <li>
-                        Login using id/passwd
-                    </li>
-                    <li>
-                        ftp> bi
-                    </li>
-                    <li>
-                        ftp> put mydir.tar.Z
-                    </li>
-                    <li>
-                        ftp > quit
-                    </li>
-                    <li>
-                        $ telnet 10.10.54.75
-                    </li>
-                    <li>
-                        Login using id/passwd
-                    </li>
-                    <li>
-                        $ uncompress mydir.tar.Z
-                    </li>
-                    <li>
-                        $ tar xvf mydir.tar
-                    </li>
-                </ul>
-
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-4.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-5.png">
-            </div>
-            <div class="ui segment">
-                <img src="asset/ch18-6.png">
+                <img src="asset/ch11-3.png">
             </div>
 
 
@@ -225,6 +253,7 @@
 
 
 
+            
         </div>
     </body>
 </html>

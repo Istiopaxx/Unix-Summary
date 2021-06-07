@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 16
+                    </div>
+                </h1>
+            </div>
+
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">TCP/IP Protocol</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        TCP : Layer 4 of Internet Protocols
+                    </li>
+                    <li>
+                        IP : Layer 3 of Internet Protocols
+                    </li>
+                    <li>
+                        ICMP : ping, traceroute
+                    </li>
+                    <li>
+                        UDP : Layer 4
+                    </li>
+                    <li>
+                        ARP : arp -a
+                    </li>
+                    <li>
+                        HTTP : web protocol
+                    </li>
+                    <li>
+                        FTP : file transfer
+                    </li>
+                    <li>
+                        Telnet : remote access
+                    </li>
+                    <li>
+                        SMTP : email
+                    </li>
+                    <li>
+                        RIP : routing protocol
+                    </li>
+                    <li>
+                        DNS : name server (domain name <-> ip address)
+                    </li>
+                    <li>
+                        DHCP : dynamic host configuration protocol
+                    </li>
+                    <li>
+                        - ip address, netmask, default router, DNS server
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">IP Setup</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        ifconfig e1000g0 plumb
+                    </li>
+                    <li>
+                        ifconfig e1000g0 10.0.2.5 netmask
+                    </li>
+                    <li>
+                        255.255.255.0 broadcast 10.0.2.255
+                    </li>
+                    <li>
+                        ifconfig e1000g0 up
+                    </li>
+                    <li>
+                        ifconfig -a
+                    </li>
+                    <li>
+                        route add net default 10.0.2.2
+                    </li>
+                    <li>
+                        ping 10.10.54.75
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch16-1.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Network Configuration files</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        /etc/hostname.e1000g0
+                    </li>
+                    <li>
+                        – Other system : rge0, rtls0, hme0, ….
+                    </li>
+                    <li>
+                        /etc/hosts
+                    </li>
+                    <li>
+                        /etc/netmasks
+                    </li>
+                    <li>
+                        /etc/defaultrouter
+                    </li>
+                    <li>
+                        /etc/resolv.conf
+                    </li>
+                    <li>
+                        /etc/nsswitch.conf
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch16-2.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/hostname.e1000g0</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Sol300
+                    </li>
+                    <li>
+                        – IP address should be in /etc/hosts
+                    </li>
+                    <li>
+                        10.0.2.5
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/hosts</h2>
+                <p>#  </p>
+                <p># Internet host table  </p>
+                <p>#  </p>
+                <p>127.0.0.1 localhost  </p>
+                <p>10.0.2.5 sol300 sol300.snut.ac.kr  </p>
+                <p>loghost  </p>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/netmasks</h2>
+                <p># Both the network-number and the netmasks are specified in </p>
+                <p># "decimal dot" notation, e.g:  </p>
+                <p>#  </p>
+                <p># 128.32.0.0 255.255.255.0  </p>
+                <p># 10.0.2.0 255.255.255.0</p>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/defaultrouter</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        10.0.2.2
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/resolv.conf</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        domain snut.ac.kr
+                    </li>
+                    <li>
+                        nameserver 203.246.80.1
+                    </li>
+                    <li>
+                        nameserver 203.246.80.5
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">/etc/nsswitch.conf</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        hosts: files dns
+                    </li>
+                    <li>
+                        when the system finds an ip address of hosts of domain name, first finds it at /etc/hosts file, next send query request to DNS server (/etc/resolv.conf)
+                    </li>
+                    <li>
+                        if ping www.seoultech.ac.kr, then the unix system see the /etc/hosts file to resolves the ip address of www.seoultech.ac.kr, if not exist there, then sends query to DNS server and resolves the ip address of 203.246.83.235
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Network Commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        arp –a
+                    </li>
+                    <li>
+                        – IP address/MAC address matching cache
+                    </li>
+                    <li>
+                        ping 10.0.2.2
+                    </li>
+                    <li>
+                        – Check route to target exist and target is alive
+                    </li>
+                    <li>
+                        traceroute 10.10.54.75
+                    </li>
+                    <li>
+                        – Check route to target. can see all router in route
+                    </li>
+                    <li>
+                        nslookup www.snut.ac.kr
+                    </li>
+                    <li>
+                        – Domain name and IP address resolution
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch16-3.png">
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">netstat</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Show network status
+                    </li>
+                    <li>
+                        -i : status of the interface
+                    </li>
+                    <li>
+                        -r : routing table
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch16-4.png">
+            </div>
+
+
+            <div class="ui segment">
+                <h4 class="ui header"></h4>
+                <p></p>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+            
+        </div>
+    </body>
+</html>

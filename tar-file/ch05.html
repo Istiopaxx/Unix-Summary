@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unix Summary</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui container">
+
+            
+
+            <div class="ui segment">
+                <h1 class="ui red inverted left aligned block header">
+                    18101279 Choi Min Jun
+                    <div class="ui red inverted left aligned sub header">
+                        Unix Summary - Chapter 5
+                    </div>
+                </h1>
+            </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Contents</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Environment variable
+                    </li>
+                    <li>
+                        $ Variable commands
+                    </li>
+                    <li>
+                        $ System variable
+                    </li>
+                    <li>
+                        $ User variable
+                    </li>
+                    <li>
+                        $ Absolute/relative path
+                    </li>
+                    <li>
+                        $ Shell
+                    </li>
+                    <li>
+                        $ Shell initialization files
+                    </li>
+                    <li>
+                        $ alias
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Environment Variable</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Affects the look and feel of computing experiences
+                    </li>
+                    <li>
+                        $ PS1 : commands prompts
+                    </li>
+                    <li>
+                        – $PS1=‘[hello >> ‘ // sh
+                    </li>
+                    <li>
+                        – $PS1=“[\h\w \# >> “ // bash
+                    </li>
+                    <li>
+                        $ PATH : contains a list of directory that are searched when a user input a command
+                    </li>
+                    <li>
+                        – PATH=/usr/bin:/usr/ucb
+                    </li>
+                    <li>
+                        – PATH=$PATH:/usr/sbin
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch05-1.png">
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">Local/environment variable</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Local variable
+                    </li>
+                    <li>
+                        – Affects to current shell only
+                    </li>
+                    <li>
+                        – $ a=3
+                    </li>
+                    <li>
+                        $ environment variable
+                    </li>
+                    <li>
+                        – Affects to sub-shell, too
+                    </li>
+                    <li>
+                        – $ export a
+                    </li>
+                    <li>
+                        $ Example
+                    </li>
+                    <li>
+                        – $ a=3; b=5
+                    </li>
+                    <li>
+                        – $ echo $a $b // good
+                    </li>
+                    <li>
+                        – $ export b
+                    </li>
+                    <li>
+                        – $ sh // start sub-shell
+                    </li>
+                    <li>
+                        – $ echo $a // no result
+                    </li>
+                    <li>
+                        – $ echo $b // 5
+                    </li>
+                    <li>
+                        – $ exit // return to parent(original) shell
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch05-3.png">
+            </div>
+
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">Variable commands</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ set
+                    </li>
+                    <li>
+                        – See all variables and its value
+                    </li>
+                    <li>
+                        – $ set | grep PATH
+                    </li>
+                    <li>
+                        $ env
+                    </li>
+                    <li>
+                        – See all environment variables and its value
+                    </li>
+                    <li>
+                        $ echo $variable
+                    </li>
+                    <li>
+                        – $ echo $a
+                    </li>
+                    <li>
+                        $ export
+                    </li>
+                    <li>
+                        – makes a viable to an environment variable
+                    </li>
+                    <li>
+                        – $ export a
+                    </li>
+                    <li>
+                        $ Unset
+                    </li>
+                    <li>
+                        – $ unset a
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch05-2.png">
+            </div>
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">System/user variable</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ System variable
+                    </li>
+                    <li>
+                        – Embedded variable
+                    </li>
+                    <li>
+                        – PS1, PATH, SHELL, Lang, …
+                    </li>
+                    <li>
+                        $ User variable
+                    </li>
+                    <li>
+                        – User defined variable
+                    </li>
+                    <li>
+                        – $ a=3
+                    </li>
+                </ul>
+
+            </div>
+            
+            <div class="ui segment">
+                <h2 class="ui header">Absolute/Relative Path</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Absolute Path
+                    </li>
+                    <li>
+                        – Starts with / (root) path
+                    </li>
+                    <li>
+                        – /usr/bin/ls
+                    </li>
+                    <li>
+                        $ Relative Path
+                    </li>
+                    <li>
+                        – Doesn’t start with /
+                    </li>
+                    <li>
+                        – Reference is current directory
+                    </li>
+                    <li>
+                        – dir1/hi.txt
+                    </li>
+                    <li>
+                        $ Shorthand notations
+                    </li>
+                    <li>
+                        . : current directory (./.profile)
+                    </li>
+                    <li>
+                        .. : parent directory (../dir2/hi.txt)
+                    </li>
+                    <li>
+                        ~ user’s home directory (~unix300/hi.txt)
+                    </li>
+                </ul>
+
+            </div>
+            
+            
+            
+            <div class="ui segment">
+                <h2 class="ui header">Kinds of Shell</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Bourne Shell (sh)
+                    </li>
+                    <li>
+                        – Original unix shell
+                    </li>
+                    <li>
+                        $ C Shell (csh)
+                    </li>
+                    <li>
+                        – Syntax is similar with C programming language
+                    </li>
+                    <li>
+                        $ Korn Shell (ksh)
+                    </li>
+                    <li>
+                        – sh + csh + additional functions
+                    </li>
+                    <li>
+                        $ Bourne Again Shell (bash)
+                    </li>
+                    <li>
+                        – sh + many functions
+                    </li>
+                </ul>
+
+            </div>
+            
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">Shell initialization files</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ /etc/profile // global configuration file
+                    </li>
+                    <li>
+                        $ Sh
+                    </li>
+                    <li>
+                        – ~/.profile
+                    </li>
+                    <li>
+                        $ Csh
+                    </li>
+                    <li>
+                        – ~/.cshrc, ~/.login
+                    </li>
+                    <li>
+                        $ Ksh
+                    </li>
+                    <li>
+                        – ~/.profile, ~/.kshrc
+                    </li>
+                    <li>
+                        $ Bash
+                    </li>
+                    <li>
+                        – ~/.bashrc_profile
+                    </li>
+                </ul>
+
+            </div>
+            
+
+            
+            <div class="ui segment">
+                <h2 class="ui header">alias</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ Substituting one term to another
+                    </li>
+                    <li>
+                        $ alias
+                    </li>
+                    <li>
+                        $ alias ls=‘ls –l’
+                    </li>
+                    <li>
+                        $ unalias ls
+                    </li>
+                    <li>
+                        $ Sh
+                    </li>
+                    <li>
+                        – $ dir() ls –l $*
+                    </li>
+                    <li>
+                        – $ dir /
+                    </li>
+                </ul>
+
+            </div>
+            
+
+            
+            <div class="ui segment">
+                <h2 class="ui header"></h2>
+                <p></p>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+
+            </div>
+            
+
+
+
+        </div>
+    </body>
+</html>
