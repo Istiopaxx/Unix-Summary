@@ -24,16 +24,183 @@
 
 
 
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Backup Media Types</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        Magnetic Tapes
+                    </li>
+                    <li>
+                        CD/DVD-ROM
+                    </li>
+                    <li>
+                        Zip drives
+                    </li>
+                    <li>
+                        Hard drive/network backup
+                    </li>
+                    <li>
+                        USB
                     </li>
                 </ul>
 
             </div>
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Backup Types</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Full backup
+                    <li>
+                         – entire
+                    </li> 
+                    </li>
+                    <li>
+                        Differential Backup
+                    </li>
+                    <li>
+                        – that has changed since last full backup
+                    </li>
+                    <li>
+                        Incremental Backup
+                    </li>
+                    <li>
+                        – that has changed since the completion of any other type of backup
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">tar</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Tape archive
+                    </li>
+                    <li>
+                        c : creates
+                    </li>
+                    <li>
+                        t : shows contents
+                    </li>
+                    <li>
+                        x : extracts
+                    </li>
+                    <li>
+                        v : verbose
+                    </li>
+                    <li>
+                        f : set filename
+                    </li>
+                    <li>
+                        tar cvf mydir.tar mydir
+                    </li>
+                    <li>
+                        tar tvf mydir.tar
+                    </li>
+                    <li>
+                        tar xvf mydir.tar
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch18-1.png">
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch18-2.png">
+            </div>
+
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">compress</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        compress mydir.tar
+                    </li>
+                    <li>
+                        – > Mydir.tar.Z
+                    </li>
+                    <li>
+                        uncopmress mydir.tar
+                    </li>
+                    <li>
+                        gzip mydir.tar
+                    </li>
+                    <li>
+                        – > mydir.tar.gz
+                    </li>
+                    <li>
+                        gzip –d mydir.tar.gz
+                    </li>
+                    <li>
+                        gunzip mydir.tar.gz
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch18-3.png">
+            </div>
+
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">example</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        $ tar cvf mydir.tar mydir
+                    </li>
+                    <li>
+                        $ compress mydir.tar
+                    </li>
+                    <li>
+                        $ ftp 10.10.54.75
+                    </li>
+                    <li>
+                        Login using id/passwd
+                    </li>
+                    <li>
+                        ftp> bi
+                    </li>
+                    <li>
+                        ftp> put mydir.tar.Z
+                    </li>
+                    <li>
+                        ftp > quit
+                    </li>
+                    <li>
+                        $ telnet 10.10.54.75
+                    </li>
+                    <li>
+                        Login using id/passwd
+                    </li>
+                    <li>
+                        $ uncompress mydir.tar.Z
+                    </li>
+                    <li>
+                        $ tar xvf mydir.tar
+                    </li>
+                </ul>
+
+            </div>
+
 
 
             <div class="ui segment">
@@ -46,14 +213,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
 
 
 

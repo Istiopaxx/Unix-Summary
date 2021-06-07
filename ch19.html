@@ -24,16 +24,233 @@
 
 
 
+
+
             <div class="ui segment">
-                <h2 class="ui header"></h2>
+                <h2 class="ui header">Open Source Licensing</h2>
                 <p></p>
                 <ul>
                     <li>
-
+                        BSD License
+                    </li>
+                    <li>
+                        – Source code can be modified
+                    </li>
+                    <li>
+                        – Modification do not have to be redistributed
+                    </li>
+                    <li>
+                        – Advertised as BSD code is used
+                    </li>
+                    <li>
+                        – Used as proprietary or commercial software
+                    </li>
+                    <li>
+                        GNU Public License (GPL)
+                    </li>
+                    <li>
+                        – Called as "copylight license"
+                    </li>
+                    <li>
+                        – Any modified version of the distributed software can be released under the same GPL terms (-> termed as not "open source" but "free software")
                     </li>
                 </ul>
 
             </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Software site</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        www.sunfreeware.com
+                    </li>
+                    <li>
+                        unixpackages.com
+                    </li>
+                    <li>
+                        www.freshmeat.net
+                    </li>
+                    <li>
+                        www.linuxberg.com
+                    </li>
+                    <li>
+                        www.tucows.com
+                    </li>
+                    <li>
+                        www.fsf.org
+                    </li>
+                    <li>
+                        www.ibiblio.org
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Install Lynx software</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        Download from lynx.isc.org
+                    </li>
+                    <li>
+                        Unzip
+                    </li>
+                    <li>
+                        PATH=$PATH:/usr/sfw/bin:/usr/ccs/bin:.
+                    </li>
+                    <li>
+                        Export PATH
+                    </li>
+                    <li>
+                        ./configure
+                    </li>
+                    <li>
+                        Make
+                    </li>
+                    <li>
+                        Make install
+                    </li>
+                    <li>
+                        Run Lynx
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">Compile C program</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        gcc hello.c
+                    </li>
+                    <li>
+                        gcc –o hello hello.c
+                    </li>
+                    <li>
+                        gcc –c main.c sub1.c sub2.c
+                    </li>
+                    <li>
+                        gcc –o maketest main.o sub1.o sub2.o
+                    </li>
+                    <li>
+                        make
+                    </li>
+                    <li>
+                        – makefile
+                    </li>
+                    <li>
+                        – make –f make.my
+                    </li>
+                    <li>
+                        – make <target>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch19-1.png">
+            </div>
+
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">makefile/Makefile</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        (default target) : dependency lists
+                    </li>
+                    <li>
+                        (tab) command
+                    </li>
+                    <li>
+                        (target) : dependency lists
+                    </li>
+                    <li>
+                        (tab) command
+                    </li>
+                    <li>
+                        (target) : dependency lists
+                    </li>
+                    <li>
+                        (tab) command
+                    </li>
+                    <li>
+                        ......
+                    </li>
+                    <li>
+                        (label) :
+                    </li>
+                    <li>
+                        (tab) command
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch19-2.png">
+            </div>
+
+
+
+
+            <div class="ui segment">
+                <h2 class="ui header">makefile</h2>
+                <p></p>
+                <ul>
+                    <li>
+                        maketest : main.o sub1.o sub2.o
+                    </li>
+                    <li>
+                        (tab) gcc –o maketest main.o sub1.o sub2.o
+                    </li>
+                    <li>
+                        main.o : main.c my.h
+                    </li>
+                    <li>
+                        (tab) gcc –c main.c
+                    </li>
+                    <li>
+                        sub1.o : sub1.c my.h
+                    </li>
+                    <li>
+                        (tab) gcc –c sub1.c
+                    </li>
+                    <li>
+                        sub2.o : sub2.c my.h
+                    </li>
+                    <li>
+                        (tab) gcc –c sub2.c
+                    </li>
+                    <li>
+                        clean :
+                    </li>
+                    <li>
+                        (tab) rm –f *.o maketest
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ui segment">
+                <img src="asset/ch19-3.png">
+            </div>
+
+
+
 
 
             <div class="ui segment">
@@ -46,14 +263,6 @@
                 </ul>
 
             </div>
-
-
-
-
-
-
-
-
 
 
 
